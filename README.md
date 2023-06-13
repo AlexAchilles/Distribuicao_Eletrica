@@ -1,5 +1,5 @@
 # Distribuicao_Eletrica
 
-##Projeto feito para um trabalho de química. 
+## Projeto feito para um trabalho de química. 
 
-##Ainda há de ser melhorado, é apenas a primeira versão
+## Ainda há de ser melhorado, é apenas a primeira versão
