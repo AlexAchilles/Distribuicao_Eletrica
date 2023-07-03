@@ -1,82 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Distribuição Eletrônica</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    #container {
-      width: 300px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    input[type="number"] {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    #output {
-      margin-top: 20px;
-      padding: 10px;
-      background-color: #f2f2f2;
-      border: 1px solid #ccc;
-      text-align: left;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby don't hurt me</title>
+    <script type="text/javascript" src="./assets/script.js" async></script>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="icon" type="image/png" href="./baby.png">
 </head>
+
 <body>
-  <div id="container">
-    <h2>Distribuição Eletrônica</h2>
-    <label for="atomicNumber">Número Atômico:</label>
-    <input type="number" id="atomicNumber" min="1" required>
-    <button onclick="calculateDistribution()">Calcular</button>
-    <div id="output"></div>
-  </div>
+    <div class="conteudo">
+        <h1>Distribuição Eletrônica</h1>
+        <input type="text" placeholder="Digite um número atômico" id="input">
+        <button id="btn" onclick="meuAudio.play()">Calcule</button>
+        <audio id="meuAudio" none>
+            <source src="./baby-dont-hurt-me.mp3" type="audio/mp3">
+        </audio>
+      
+        <div class="line"></div>
 
-  <script>
-    function calculateDistribution() {
-      var atomicNumberInput = document.getElementById('atomicNumber');
-      var atomicNumber = parseInt(atomicNumberInput.value);
-      var distribution = getElectronDistribution(atomicNumber);
+        <div class="elemento__quimico">
+        <h2 id="elemento">Elemento:</h2>
+        <h3 id="simbolo"></h3>
+        </div>
 
-      var output = document.getElementById('output');
-      output.innerHTML = '<strong>Distribuição Eletrônica:</strong><br>' + distribution;
-    }
+        <div class="line"></div>
+      
+        <p>Distribuição eletrônica:</p>
+        <span id="eletroDist"> </span>
+        
+        <div class="line"></div>
+        
+        <p>Subnível mais energético:</p>
+        <span id="subnivel"> </span>
+        
+        <div class="line"></div>
+        
+        <p>Número de elétrons no subnível mais energético:</p>
+        <span id="eleSubnivel"> </span>
+        
+        <div class="line"></div>
 
-    function getElectronDistribution(atomicNumber) {
-      var shells = [2, 8, 8, 18, 18, 32, 32];
-      var distribution = '';
+        <p>Camada de Valência:</p>
+        <span id="valencia"> </span>
+        
+        <div class="line"></div>
 
-      for (var i = 0; i < shells.length; i++) {
-        if (atomicNumber <= 0) {
-          break;
-        }
-
-        var shellElectrons = Math.min(atomicNumber, shells[i]);
-        distribution += shellElectrons + ', ';
-        atomicNumber -= shellElectrons;
-      }
-
-      distribution = distribution.slice(0, -2);
-      if (atomicNumber > 0) {
-        distribution += ', ' + atomicNumber;
-      }
-
-      return distribution;
-    }
-  </script>
+        <p>Número de elétrons na camada de valência:</p>
+        <span id="camada"> </span>
+    </div>
 </body>
+
 </html>
